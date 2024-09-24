@@ -22,11 +22,11 @@ body .banner {
   position: relative;
 }
 body .banner .slider {
+  width: 100px;
+  height: 150px;
+  left: calc(50% - 50px);
   position: absolute;
-  width: 200px;
-  height: 250px;
   top: 10%;
-  left: calc(50% - 100px);
   transform-style: preserve-3d;
   transform: perspective(1000px);
   animation: autoRun 20s linear infinite;
@@ -46,7 +46,7 @@ body .banner .slider:hover {
 body .banner .slider .item {
   position: absolute;
   inset: 0 0 0 0;
-  transform: rotateY(calc((var(--position) - 1) * 360 / var(--quantity) * 1deg)) translateZ(550px);
+  transform: rotateY(calc((var(--position) - 1) * 360 / var(--quantity) * 1deg)) translateZ(180px);
 }
 body .banner .slider .item img {
   width: 100%;
@@ -58,11 +58,12 @@ body .banner .slider .item img:hover ~ p {
   display: block;
 }
 body .banner .slider .item p {
+  font-size: 1rem;
+  font-weight: 900;
   position: absolute;
   width: 100%;
   bottom: 1em;
   left: 0;
-  font-size: 2rem;
   color: #d2d2d2;
   -webkit-text-stroke: 1px #25283b;
   text-shadow: 0 10px 20px #121212;
@@ -86,9 +87,12 @@ body .banner .content {
   z-index: 1;
 }
 body .banner .content h1 {
+  text-align: center;
+  width: 100%;
+  text-shadow: 0 10px 20px #121212;
+  font-size: 5em;
   position: relative;
   font-family: "ICA Rubrik";
-  font-size: 10em;
   line-height: 1em;
   color: #25283b;
 }
@@ -101,8 +105,13 @@ body .banner .content h1::after {
   color: transparent;
 }
 body .banner .content .author {
-  text-align: right;
-  max-width: 300px;
+  color: #fff;
+  padding: 20px;
+  text-shadow: 0 10px 20px #121212;
+  max-width: unset;
+  width: 100%;
+  text-align: center;
+  padding: 0 30px;
   z-index: 2;
 }
 body .banner .content .author h2 {
@@ -120,7 +129,7 @@ body .banner .content .model {
   left: 0;
   z-index: 1;
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   body .banner .slider {
     width: 160px;
     height: 200px;
@@ -130,31 +139,29 @@ body .banner .content .model {
     transform: rotateY(calc((var(--position) - 1) * 360 / var(--quantity) * 1deg)) translateZ(300px);
   }
   body .banner .content h1 {
-    text-align: center;
-    width: 100%;
-    text-shadow: 0 10px 20px #121212;
     font-size: 7em;
   }
-  body .banner .content .author {
-    color: #fff;
-    padding: 20px;
-    text-shadow: 0 10px 20px #121212;
-    max-width: unset;
-    width: 100%;
-    text-align: center;
-    padding: 0 30px;
-  }
 }
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   body .banner .slider {
-    width: 100px;
-    height: 150px;
-    left: calc(50% - 50px);
+    width: 200px;
+    height: 250px;
+    left: calc(50% - 100px);
   }
   body .banner .slider .item {
-    transform: rotateY(calc((var(--position) - 1) * 360 / var(--quantity) * 1deg)) translateZ(180px);
+    transform: rotateY(calc((var(--position) - 1) * 360 / var(--quantity) * 1deg)) translateZ(550px);
+  }
+  body .banner .slider .item p {
+    font-size: 2rem;
   }
   body .banner .content h1 {
-    font-size: 5em;
+    text-align: left;
+    width: auto;
+    text-shadow: none;
+    font-size: 10em;
+  }
+  body .banner .content .author {
+    text-align: right;
+    max-width: 300px;
   }
 }/*# sourceMappingURL=style.css.map */
