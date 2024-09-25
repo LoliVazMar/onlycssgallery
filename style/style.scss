@@ -34,6 +34,25 @@ $bp-lg-min: 1024px;
   box-sizing: border-box;
 }
 
+h1 {
+}
+
+h2 {
+}
+
+h3 {
+  font-size: 1rem;
+  color: $bg-color;
+}
+
+h4 {
+  font-weight: 300;
+
+  strong {
+    font-weight: bold;
+  }
+}
+
 body {
   background-color: $bg-color;
 
@@ -81,22 +100,21 @@ body {
           height: 100%;
           object-fit: cover;
 
-          &:hover ~ p {
+          &:hover ~ h3 {
             display: block;
           }
         }
 
-        p {
-          font-size: 1rem;
+        h3 {
           font-weight: 900;
           position: absolute;
           width: 100%;
           bottom: 1em;
           left: 0;
-          color: $bg-color;
           -webkit-text-stroke: 1px $text-color;
           text-shadow: 0 10px 20px $black;
           text-transform: capitalize;
+          pointer-events: none;
           display: none;
         }
       }
@@ -138,7 +156,7 @@ body {
       }
 
       .author {
-        color: #fff;
+        color: $white;
         padding: 20px;
         text-shadow: 0 10px 20px $black;
         max-width: unset;
@@ -152,8 +170,8 @@ body {
         }
       }
 
-      .model {
-        background-image: url(../img/zeus.png);
+      .zeus {
+        background-image: url(../img/zeus.webp);
         background-position: top center;
         background-size: auto 130%;
         background-repeat: no-repeat;
@@ -196,7 +214,7 @@ body {
               calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
             )
             translateZ(550px);
-          p {
+          h3 {
             font-size: 2rem;
           }
         }
@@ -209,6 +227,7 @@ body {
           font-size: 10em;
         }
         .author {
+          color: $black;
           text-align: right;
           max-width: 300px;
         }

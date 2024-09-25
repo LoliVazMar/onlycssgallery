@@ -11,6 +11,18 @@
   box-sizing: border-box;
 }
 
+h3 {
+  font-size: 1rem;
+  color: #d2d2d2;
+}
+
+h4 {
+  font-weight: 300;
+}
+h4 strong {
+  font-weight: bold;
+}
+
 body {
   background-color: #d2d2d2;
 }
@@ -54,20 +66,19 @@ body .banner .slider .item img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-body .banner .slider .item img:hover ~ p {
+body .banner .slider .item img:hover ~ h3 {
   display: block;
 }
-body .banner .slider .item p {
-  font-size: 1rem;
+body .banner .slider .item h3 {
   font-weight: 900;
   position: absolute;
   width: 100%;
   bottom: 1em;
   left: 0;
-  color: #d2d2d2;
   -webkit-text-stroke: 1px #25283b;
   text-shadow: 0 10px 20px #121212;
   text-transform: capitalize;
+  pointer-events: none;
   display: none;
 }
 body .banner .content {
@@ -105,7 +116,7 @@ body .banner .content h1::after {
   color: transparent;
 }
 body .banner .content .author {
-  color: #fff;
+  color: #ececec;
   padding: 20px;
   text-shadow: 0 10px 20px #121212;
   max-width: unset;
@@ -117,8 +128,8 @@ body .banner .content .author {
 body .banner .content .author h2 {
   font-size: 3em;
 }
-body .banner .content .model {
-  background-image: url(../img/zeus.png);
+body .banner .content .zeus {
+  background-image: url(../img/zeus.webp);
   background-position: top center;
   background-size: auto 130%;
   background-repeat: no-repeat;
@@ -151,7 +162,7 @@ body .banner .content .model {
   body .banner .slider .item {
     transform: rotateY(calc((var(--position) - 1) * 360 / var(--quantity) * 1deg)) translateZ(550px);
   }
-  body .banner .slider .item p {
+  body .banner .slider .item h3 {
     font-size: 2rem;
   }
   body .banner .content h1 {
@@ -161,6 +172,7 @@ body .banner .content .model {
     font-size: 10em;
   }
   body .banner .content .author {
+    color: #121212;
     text-align: right;
     max-width: 300px;
   }
